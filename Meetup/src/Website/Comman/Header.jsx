@@ -4,8 +4,7 @@ import { NavLink } from 'react-router-dom'
 function Header() {
   return (
     <div>
-{/* Header Section Begin */}
-<header className="header-section">
+       <header className="header-section">
   <div className="container">
     <div className="logo">
       <a href="./index.html">
@@ -34,9 +33,7 @@ function Header() {
     </div>
     <div id="mobile-menu-wrap" />
   </div>
-</header>
-{/* Header End */}
-
+</header> 
     </div>
   )
 }

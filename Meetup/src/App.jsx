@@ -35,7 +35,7 @@ function App() {
 
        <Route path='/admindashbord' element={<AdminDashBord />} />
        <Route path='/sadd' element={<ServiceAdd />} />
-       <Route path='/smanage' element={<ServiceManage />} />
+       <Route path='/samanage' element={<ServiceManage />} />
 
 
 

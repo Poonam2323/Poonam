@@ -12,7 +12,7 @@ function Speaker() {
       }, []);
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
     <div>
   {/* Breadcrumb Section Begin */}
   <section className="breadcrumb-section">
@@ -261,7 +261,7 @@ function Speaker() {
   {/* Contact Section End */}
 </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

@@ -9,7 +9,7 @@ function AdminHeader() {
   <div className="container">
     <div className="logo">
       <a href="./index.html">
-        <img src="img/logo.png" alt />
+        <img src="img/logo.png" alt="" />
       </a>
     </div>
     <div className="nav-menu">

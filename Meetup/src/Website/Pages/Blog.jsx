@@ -14,7 +14,7 @@ function Blog() {
 
     return (
         <div>
-            {/* <Header /> */}
+            <Header />
             <div>
                 {/* Breadcrumb Section Begin */}
                 <section className="breadcrumb-section">
@@ -131,7 +131,7 @@ function Blog() {
                 </section>
                 {/* Blog Section End */}
             </div>
-
+        <Footer />
            
         </div>
     )

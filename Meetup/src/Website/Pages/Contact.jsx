@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import $ from "jquery";
+import Header from '../Comman/Header';
+import Footer from '../Comman/Footer';
 
 function Contact() {
     useEffect(() => {
@@ -10,6 +12,7 @@ function Contact() {
       }, []);
   return (
     <div>
+      <Header />
      <div>
   {/* Contact Top Content Section Begin */}
   <section className="contact-content-section">
@@ -100,6 +103,7 @@ function Contact() {
   {/* Contact Form Section End */}
 </div>
 
+    <Footer />
 
     </div>
   )

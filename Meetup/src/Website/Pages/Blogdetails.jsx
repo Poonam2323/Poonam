@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import $ from "jquery";
+import Header from '../Comman/Header';
+import Footer from '../Comman/Footer';
 
 function Blogdetails() {
      useEffect(() => {
@@ -10,7 +12,7 @@ function Blogdetails() {
       }, []);
   return (
     <div>
-      
+      <Header />
     <div>
   {/* Blog Details Hero Section Begin */}
   <section className="blog-hero-section set-bg" data-setbg="img/blog/blog-details/blog-details-hero.jpg">
@@ -179,6 +181,7 @@ function Blogdetails() {
   </section>
   {/* Related Post Section End */}
 </div>
+    <Footer />
 
     </div>
   )

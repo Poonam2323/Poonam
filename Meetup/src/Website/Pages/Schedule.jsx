@@ -12,7 +12,7 @@ function Schedule() {
     }, []);
     return (
         <div>
-            {/* <Header /> */}
+            <Header />
             <div>
                 {/* Breadcrumb Section Begin */}
                 <section className="breadcrumb-section">
@@ -625,7 +625,7 @@ function Schedule() {
             </div>
 
 
-            {/* <Footer /> */}
+            <Footer />
         </div>
     )
 }

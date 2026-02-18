@@ -2,15 +2,17 @@ import React from 'react'
 import Header from '../Comman/Header'
 import Footer from '../Comman/Footer'
 import $ from "jquery";
-import { useEffect } from "react";
+import { useEffect} from "react";
 
 function Home() {
+  
    useEffect(() => {
     $(".set-bg").each(function () {
       const bg = $(this).attr("data-setbg");
       $(this).css("background-image", `url(${bg})`);
     });
   }, []);
+  
   return (
     
     <div>

@@ -3,6 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <div>
+        <div>
        {/* Footer Section Begin */}
 <footer className="footer-section">
   <div className="container">
@@ -67,6 +68,8 @@ function Footer() {
   </div>
 </footer>
 {/* Footer Section End */}
+
+    </div>
 
     </div>
   )

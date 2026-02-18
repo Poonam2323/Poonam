@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react'
-import Header from '../Comman/Header'
+import React, { useEffect, useState } from 'react'
+
 import $ from "jquery";
-import Footer from '../Comman/Footer'
+import Header from '../Comman/Header';
+import Footer from '../Comman/Footer';
+import axios from 'axios';
+
 
 function About() {
      useEffect(() => {
@@ -10,9 +13,19 @@ function About() {
       $(this).css("background-image", `url(${bg})`);
     });
   }, []);
+  useEffect(()=>{
+    Getdata();
+  })
+  const [Get , SetGet]=useState()
+  const Getdata = async()=>{
+    const res = await axios.get("http://localhost:3000/services")
+    console.log(res.data);
+    SetGet(res.data)
+    
+  }
   return (
     <div>
-      {/* <Header /> */}
+     <Header />
 <div>
   {/* Breadcrumb Section Begin */}
   <section className="breadcrumb-section">
@@ -77,8 +90,15 @@ function About() {
         </div>
       </div>
     </div>
-    <div className="member-item set-bg" data-setbg="img/team-member/member-1.jpg">
-      <div className="mi-social">
+
+    {
+      
+      Get && Get.map((data)=>{
+        return(
+  <div className="member-item set-bg" data-setbg={data.img}>
+        {/* <img src={data.img} style={{width : "300px", height: "400px"}} alt="" /> */}
+
+    <div className="mi-social">
         <div className="mi-social-inner bg-gradient">
           <a href="#"><i className="fa fa-facebook" /></a>
           <a href="#"><i className="fa fa-instagram" /></a>
@@ -87,136 +107,17 @@ function About() {
         </div>
       </div>
       <div className="mi-text">
-        <h5>Emma Sandoval</h5>
-        <span>Speaker</span>
+        <h5>{data.name}</h5>
+        <span>{data.desc}</span>
+        <img src={data.img} style={{width : "300px", height: "400px"}} alt="" />
+
       </div>
     </div>
-    <div className="member-item set-bg" data-setbg="img/team-member/member-2.jpg">
-      <div className="mi-social">
-        <div className="mi-social-inner bg-gradient">
-          <a href="#"><i className="fa fa-facebook" /></a>
-          <a href="#"><i className="fa fa-instagram" /></a>
-          <a href="#"><i className="fa fa-twitter" /></a>
-          <a href="#"><i className="fa fa-linkedin" /></a>
-        </div>
-      </div>
-      <div className="mi-text">
-        <h5>Emma Sandoval</h5>
-        <span>Speaker</span>
-      </div>
-    </div>
-    <div className="member-item set-bg" data-setbg="img/team-member/member-3.jpg">
-      <div className="mi-social">
-        <div className="mi-social-inner bg-gradient">
-          <a href="#"><i className="fa fa-facebook" /></a>
-          <a href="#"><i className="fa fa-instagram" /></a>
-          <a href="#"><i className="fa fa-twitter" /></a>
-          <a href="#"><i className="fa fa-linkedin" /></a>
-        </div>
-      </div>
-      <div className="mi-text">
-        <h5>Emma Sandoval</h5>
-        <span>Speaker</span>
-      </div>
-    </div>
-    <div className="member-item set-bg" data-setbg="img/team-member/member-4.jpg">
-      <div className="mi-social">
-        <div className="mi-social-inner bg-gradient">
-          <a href="#"><i className="fa fa-facebook" /></a>
-          <a href="#"><i className="fa fa-instagram" /></a>
-          <a href="#"><i className="fa fa-twitter" /></a>
-          <a href="#"><i className="fa fa-linkedin" /></a>
-        </div>
-      </div>
-      <div className="mi-text">
-        <h5>Emma Sandoval</h5>
-        <span>Speaker</span>
-      </div>
-    </div>
-    <div className="member-item set-bg" data-setbg="img/team-member/member-5.jpg">
-      <div className="mi-social">
-        <div className="mi-social-inner bg-gradient">
-          <a href="#"><i className="fa fa-facebook" /></a>
-          <a href="#"><i className="fa fa-instagram" /></a>
-          <a href="#"><i className="fa fa-twitter" /></a>
-          <a href="#"><i className="fa fa-linkedin" /></a>
-        </div>
-      </div>
-      <div className="mi-text">
-        <h5>Emma Sandoval</h5>
-        <span>Speaker</span>
-      </div>
-    </div>
-    <div className="member-item set-bg" data-setbg="img/team-member/member-6.jpg">
-      <div className="mi-social">
-        <div className="mi-social-inner bg-gradient">
-          <a href="#"><i className="fa fa-facebook" /></a>
-          <a href="#"><i className="fa fa-instagram" /></a>
-          <a href="#"><i className="fa fa-twitter" /></a>
-          <a href="#"><i className="fa fa-linkedin" /></a>
-        </div>
-      </div>
-      <div className="mi-text">
-        <h5>Emma Sandoval</h5>
-        <span>Speaker</span>
-      </div>
-    </div>
-    <div className="member-item set-bg" data-setbg="img/team-member/member-7.jpg">
-      <div className="mi-social">
-        <div className="mi-social-inner bg-gradient">
-          <a href="#"><i className="fa fa-facebook" /></a>
-          <a href="#"><i className="fa fa-instagram" /></a>
-          <a href="#"><i className="fa fa-twitter" /></a>
-          <a href="#"><i className="fa fa-linkedin" /></a>
-        </div>
-      </div>
-      <div className="mi-text">
-        <h5>Emma Sandoval</h5>
-        <span>Speaker</span>
-      </div>
-    </div>
-    <div className="member-item set-bg" data-setbg="img/team-member/member-8.jpg">
-      <div className="mi-social">
-        <div className="mi-social-inner bg-gradient">
-          <a href="#"><i className="fa fa-facebook" /></a>
-          <a href="#"><i className="fa fa-instagram" /></a>
-          <a href="#"><i className="fa fa-twitter" /></a>
-          <a href="#"><i className="fa fa-linkedin" /></a>
-        </div>
-      </div>
-      <div className="mi-text">
-        <h5>Emma Sandoval</h5>
-        <span>Speaker</span>
-      </div>
-    </div>
-    <div className="member-item set-bg" data-setbg="img/team-member/member-9.jpg">
-      <div className="mi-social">
-        <div className="mi-social-inner bg-gradient">
-          <a href="#"><i className="fa fa-facebook" /></a>
-          <a href="#"><i className="fa fa-instagram" /></a>
-          <a href="#"><i className="fa fa-twitter" /></a>
-          <a href="#"><i className="fa fa-linkedin" /></a>
-        </div>
-      </div>
-      <div className="mi-text">
-        <h5>Emma Sandoval</h5>
-        <span>Speaker</span>
-      </div>
-    </div>
-    <div className="member-item set-bg" data-setbg="img/team-member/member-10.jpg">
-      <div className="mi-social">
-        <div className="mi-social-inner bg-gradient">
-          <a href="#"><i className="fa fa-facebook" /></a>
-          <a href="#"><i className="fa fa-instagram" /></a>
-          <a href="#"><i className="fa fa-twitter" /></a>
-          <a href="#"><i className="fa fa-linkedin" /></a>
-        </div>
-      </div>
-      <div className="mi-text">
-        <h5>Emma Sandoval</h5>
-        <span>Speaker</span>
-      </div>
-    </div>
+)
+      })
+    }
+      
+   
   </section>
   {/* Team Member Section End */}
   {/* Story Section Begin */}
@@ -468,7 +369,7 @@ function About() {
   </section>
   {/* Contact Section End */}
 </div>
-{/* <Footer /> */}
+    <Footer />
 
     </div>
   )
